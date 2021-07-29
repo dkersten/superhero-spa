@@ -1,14 +1,17 @@
 <template>
     <div>
+
         <!-- Create child hero cards only when API data is loaded -->
         <div class="flex-container" v-if="heros !== null">
 
             <SuperheroCard class="blah" v-for="hero in heros" :key="hero.id" :parentData="hero" />
         </div>
+
         <!-- Notify user data is loading if connection speed is slow -->
         <div v-else>
             <p>Please wait while our heros download...</p>
         </div>
+
     </div>
 </template>
 
@@ -16,7 +19,6 @@
 
 // imports
 import SuperheroCard from './SuperheroCard.vue'
-// import superheroData from '../data.js'
 import axios from 'axios'
 
 export default {
@@ -42,7 +44,6 @@ export default {
 
 <style lang="css" scoped>
     .flex-container {
-        border: 1px solid #cecece;
         display: flex;
         flex-wrap: wrap;
         align-items: stretch;
