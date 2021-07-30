@@ -4,7 +4,7 @@
         <!-- Create child hero cards only when API data is loaded -->
         <div class="flex-container" v-if="heros !== null">
 
-            <SuperheroCard class="blah" v-for="hero in heros" :key="hero.id" :parentData="hero" />
+            <SuperheroCard v-for="hero in heros" :key="hero.id" :parentData="hero" />
         </div>
 
         <!-- Notify user data is loading if connection speed is slow -->
@@ -30,7 +30,6 @@ export default {
     data() {
         return {
             heros: null,
-            testStuff: [1,2,3,4,5]
         }
     },
 
